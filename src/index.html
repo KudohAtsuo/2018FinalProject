@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Proof of Existence DApp</title>
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link href="./css/app.css" rel="stylesheet" type="text/css">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+  <ul class="nav nav-tabs">
+    <li class="nav-item"><a class="nav-link active" href="#tabs-1" data-toggle="tab">Upload(Photo)</a></li>
+    <li class="nav-item"><a class="nav-link" href="#tabs-2" data-toggle="tab">Upload(Video)</a></li>
+    <li class="nav-item"><a class="nav-link" href="#tabs-3" data-toggle="tab">View(Photo)</a></li>
+    <li class="nav-item"><a class="nav-link" href="#tabs-4" data-toggle="tab">View(Video)</a></li>
+    <li class="nav-item"><a class="nav-link" href="#tabs-5" data-toggle="tab">Search</a></li>
+  </ul>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-push-2">
+        <h2>DApp Contract Status</h2>
+        <h3></h3>
+
+        <table class="table table-fluid">
+          <tr>
+            <th>Contract Address</th>
+            <td><span id="contract_address"></span></td>
+          </tr>
+
+          <tr>
+            <th>Your Total Photos</th>
+            <td><span id="number_of_photos"></span></td>
+          </tr>
+
+          <tr>
+            <th>Your Total Videos</th>
+            <td><span id="number_of_videos"></span></td>
+          </tr>
+
+          <tr>
+            <td>Welcome <span id="user_name"></span>!</td>
+          </tr>
+
+        </table>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="tab-content">
+
+    <div class="tab-pane container active" id="tabs-1">
+      <div class="col-xs-12 col-sm-8 col-sm-push-2">
+        <h1 class="text-left">Share Your Picture!</h1>
+
+        <div class="row">
+          <form class="form-control">
+            <fieldset>
+              <legend>Upload a Photo</legend>
+              <label>Choose Flile: </label><input type="file" class="form-control" name="photo" id="photo">
+              <label>Tags: </label><input type="text" class="form-control" placeholder="ethereum,ipfs,oracle" id="tagsPhoto">
+              <div><button type="button" class="btn btn-primary" onclick="upload()">Upload</button></div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
+      <br>
+      <br>
+      <h6>URL</h6>
+      <a id="url"></a>
+      <br>
+      <br>
+      <h6>Photo</h6>
+      <img id="output" height="200px">
+
+    </div>
+
+
+    <div class="tab-pane container fade" id="tabs-2">
+      <div class="col-xs-12 col-sm-8 col-sm-push-2">
+        <h1 class="text-left">Share Your Movie!</h1>
+
+        <div class="row">
+          <form class="form-control">
+            <fieldset>
+              <legend>Upload a Video</legend>
+              <label>Choose Flile: </label><input type="file" class="form-control" name="video" id="video">
+              <label>Tags: </label><input type="text" class="form-control" placeholder="ethereum,ipfs,oracle" id="tagsVideo">
+              <div><button type="button" class="btn btn-primary" onclick="uploadVideo()">Upload</button></div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
+      <br>
+      <br>
+      <h6>URL</h6>
+      <a id="urlVideo"></a>
+      <br>
+      <br>
+      <h6>Video</h6>
+      <video id="outputVideo" height="200px">
+
+    </div>
+
+
+    <div class="tab-pane container fade" id="tabs-3">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <form class="form-control">
+            <fieldset>
+              <legend>View photos</legend>
+              <button type="button" class="btn btn-primary" onclick="getPhotos()">VIEW</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
+
+      <br><br>
+      <div class="row">
+        <div class="col-xs-12 col-sm-8">
+          <div id="photoContainer"></div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <div class="tab-pane container fade" id="tabs-4">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <form class="form-control">
+            <fieldset>
+              <legend>View Videos</legend>
+              <button type="button" class="btn btn-primary" onclick="getVideos()">VIEW</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
+
+      <br><br>
+      <div class="row">
+        <div class="col-xs-12 col-sm-8">
+          <div id="videoContainer"></div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <div class="tab-pane container fade" id="tabs-5">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <form class="form-control">
+            <fieldset>
+              <legend>Search Pictures by a Tag</legend>
+              <input type="text" class="form-control" placeholder="ethereum" id="tagInput">
+              <button type="button" class="btn btn-primary" onclick="searchPicture()">SEARCH</button>
+            </fieldset>
+
+            <fieldset>
+              <legend>Search Videos by a Tag</legend>
+              <input type="text" class="form-control" placeholder="consensys" id="tagInputVideo">
+              <button type="button" class="btn btn-primary" onclick="searchVideo()">SEARCH</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
+
+      <br><br>
+      <div class="row">
+        <div class="col-xs-12 col-sm-8">
+          <div id="searchContainer"></div>
+        </div>
+      </div>
+
+      <br><br>
+      <div class="row">
+        <div class="col-xs-12 col-sm-8">
+          <div id="searchContainerVideo"></div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+
+
+  </div>
+
+  <script src="./js/jquery-3.3.1.min.js"></script>
+  <script src="./js/buffer.js"></script>
+  <script src="./js/ipfs_js_api.js"></script>
+  <script src="./js/web3.min.js"></script>
+  <script src="./js/uport-connect.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/app.js"></script>
+
+</body>
+
+</html>

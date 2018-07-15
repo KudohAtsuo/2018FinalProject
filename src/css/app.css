@@ -1,0 +1,10 @@
+@font-face {
+	font-family: 'Monoton';
+	src: url(../font/Monoton-Regular.ttf);
+}
+h1 {
+	font-family: 'Monoton', cursive;
+}
+h2 {
+  color: gray;
+}
