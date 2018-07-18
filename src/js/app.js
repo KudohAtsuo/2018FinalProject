@@ -337,6 +337,7 @@ web3.eth.getAccounts(function(error, accounts) {
     console.log(error);
   } else {
     console.log(accounts);
+    $("#account_address").html(accounts[0]);
     myContractInstance.count(accounts[0], function(error, _count) {
       if (error) {
         console.log(error);
