@@ -23,22 +23,23 @@ If you need install IPFS. Please follow install guide [IPFS](https://ipfs.io/doc
 
 To use uPort, please install the latest mobile client for your smartphone: [uPort iOS](https://itunes.apple.com/us/app/uport-identity-wallet-ethereum/id1123434510?mt=8) | [uPort Android](https://play.google.com/store/apps/details?id=com.uportMobile)
 
-**First of all copy/clone my project folder from my GitHub repo**
+**First of all copy/clone my project folder from my GitHub repo**  
 `git clone https://github.com/KudohAtsuo/2018FinalProject.git`
  
-1. Set up IPFS damon, open a terminal and type commands `ipfs init` and `ipfs daemon`. Then stop it by `Ctrl+C` and type these 2 commnads one by one for CORS configuration:  
+1. To set up IPFS damon, open a terminal and type commands `ipfs init` and `ipfs daemon`. Then stop it by `Ctrl+C` and type these 2 commnads one by one for CORS configuration:  
 `ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '["PUT", "GET", "POST", "OPTIONS"]'`  
 `ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["*"]'`  
 launch ipfs daemon again by command `ipfs daemon` 
-2. Open another terminal window and change directory into the "src" directory that contains index.html, js and css folder.
+2. Open another terminal window and change directory into the "src" directory that contains frontend files, index.html, js and css folder. I put all the necessary dependency libraries in the form of "min.js". So you dont need npm init etc. I am a big fan of min.js. :P
 3. Launch any **local deveopment server** software of your choice. Personally, I prefer [live-server](https://www.npmjs.com/package/live-server) so type the command `live-server` in the "src" directory.
-4. When you log in, QRcode will pop up. Read it by your uPort QRcode reader. 
+4. When you log in, QRcode will pop up! Read it by your uPort QRcode reader. 
 5. Launch MetaMask and set the network to Ropsten.
+6. Set up is finished!
  
 
 ### Notice:  
-1. All frontend files has been deployed on Ropsten testnetwork. So after IPFS daemon launchs, you can view directly from your browser. Just type in URL `http://localhost:8080/ipfs/QmczykYZn66WbpZKXyQZYTeEmGrynfVehXLLfCVU8MQC4w/` This address will show index.html, the DApp UI.
-2. This dApp uses IPFS api "add" function, by which uploaded data are cleaned up in 2 or 3 weeks by IPFS "garbage collector". So the address of index.html above might be deleted if garbage collector comes :D
+1. All frontend files has been deployed on Ropsten testnetwork. So after IPFS daemon launchs, you can view directly from your browser without using local server. Just type in URL `http://localhost:8080/ipfs/QmczykYZn66WbpZKXyQZYTeEmGrynfVehXLLfCVU8MQC4w/` This address will show index.html, the DApp UI.
+2. This dApp uses IPFS API of "add" function, so your uploaded data may be cleaned up in 2 or 3 weeks by IPFS "garbage collector". Same as the address of index.html above might be deleted if garbage collector comes :D
 
 ***
 
@@ -46,12 +47,12 @@ launch ipfs daemon again by command `ipfs daemon`
 This dApp consists of 5 tabs, "Upload(Picture)", "Upload(Video)", "View(Picture)", "View(Video)" and "Search".
 
 ### Upload(Picture) 
-1. Choose an **image** file like .png by clicking file button.
+1. Choose an **image** file like .png from your computer by clicking file button.
 2. Set tags separated by comma(,).
 3. Then click upload button. 
 
 ### Upload(Video)
-1. Choose a **movie** file like .mp4 by clicking file button.
+1. Choose a **movie** file like .mp4 from your computer by clicking file button.
 2. Set tags separated by comma(,).
 3. Then click upload button. 
 
