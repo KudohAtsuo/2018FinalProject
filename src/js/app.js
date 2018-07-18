@@ -306,7 +306,7 @@ var abi = [{
   }
 ];
 
-var myContractAddress = "0xbacce9c56ff6cba04de9f6c703bea74c3ad5cd09";
+var myContractAddress = "0x24aee04508756754acc559f85d467275c7ec6b4d";
 var myContractInstance;
 
 var web3Provider;

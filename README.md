@@ -17,7 +17,7 @@ Users can retrieve necessary reference data about their uploaded items to allow 
 ***
 
 ## How to set up
-This dApp contract is already deployed on Ropsten public test network. Please make sure your MetaMask is poining to Ropsten **AND** have some ETH (of Ropsten) on the account to pay for transaction fee. If you do not yet have any deposit, simply push "BUY" button. Faucet of Ropsten will give you 1 ETH for free, which is enough for now.
+This dApp contract is already deployed on **Rinkeby** public test network. Please make sure your MetaMask is poining to Rinkeby and have some fake ETH of RINKEBY on your account to pay for transaction fee. If you do not yet have any deposit, simply push "BUY" button. Go to Faucet of Rinkeby, then push tweet replacing 0x0 address with your address. Copy paste url of the tweet into the textbox will give you 3 ETH for free.
 
 If you need install IPFS. Please follow install guide [IPFS](https://ipfs.io/docs/install/).
 
@@ -32,14 +32,14 @@ To use uPort, please install the latest mobile client for your smartphone: [uPor
 launch ipfs daemon again by command `ipfs daemon` 
 2. Open another terminal window and change directory into the "src" directory that contains frontend files, index.html, js and css folder. I put all the necessary dependency libraries in the form of "min.js". So you dont need npm init etc. I am a big fan of min.js. :P
 3. Launch any **local deveopment server** software of your choice. Personally, I prefer [live-server](https://www.npmjs.com/package/live-server) so type the command `live-server` in the "src" directory.
-4. When you log in, QRcode will pop up! Read it by your uPort QRcode reader. 
-5. Launch MetaMask and set the network to Ropsten.
+4. Launch MetaMask and set the network to Rinkeby testnet.
+5. When you log in, QRcode will pop up! Read it by your uPort QRcode reader. 
 6. Set up is finished!
  
 
 ### Notice:  
-1. All frontend files has been deployed on Ropsten testnetwork. So after IPFS daemon launchs, you can view directly from your browser without using local server. Just type in URL `http://localhost:8080/ipfs/QmczykYZn66WbpZKXyQZYTeEmGrynfVehXLLfCVU8MQC4w/` This address will show index.html, the DApp UI.
-2. This dApp uses IPFS API of "add" function, so your uploaded data may be cleaned up in 2 or 3 weeks by IPFS "garbage collector". Same as the address of index.html above might be deleted if garbage collector comes :D
+1. **All frontend files has been deployed on IPFS**. So after launching IPFS daemon, you can view directly from your browser without using local server. Just type in URL `http://localhost:8080/ipfs/QmczykYZn66WbpZKXyQZYTeEmGrynfVehXLLfCVU8MQC4w/` This address will show index.html, the DApp UI.
+2. This dApp uses IPFS API of "add" function, so **your uploaded data may be cleaned up in 2 or 3 weeks by IPFS "garbage collector"**. Same as the address of index.html above might be deleted if garbage collector comes :D
 
 ***
 
