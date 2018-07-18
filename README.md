@@ -17,7 +17,7 @@ Users can retrieve necessary reference data about their uploaded items to allow 
 ***
 
 ## How to set up
-This dApp contract is already deployed on **Rinkeby** public test network. Please make sure your MetaMask is poining to Rinkeby and have some fake ETH of RINKEBY on your account to pay for transaction fee. If you do not yet have any deposit, simply push "BUY" button. Go to Faucet of Rinkeby, then push tweet replacing 0x0 address with your address. Copy paste url of the tweet into the textbox will give you 3 ETH for free.
+This dApp contract is already deployed on **Rinkeby** public test network. Please make sure your MetaMask is poining to Rinkeby and have some fake ETH of RINKEBY on your account to pay for transaction fee. If you do not yet have any deposit, simply push "BUY" button. Go to Faucet of Rinkeby, then click tweet link replacing 0x0 address with your address. Copy paste url of the tweet into the textbox will give you 3 ETH for free.
 
 If you need install IPFS. Please follow install guide [IPFS](https://ipfs.io/docs/install/).
 
