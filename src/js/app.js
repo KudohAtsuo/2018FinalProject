@@ -671,7 +671,7 @@ function constructHashVideo() {
 var uportconnect = window.uportconnect;
 var uport = new uportconnect.Connect('Proof of Existence Picture/Video Dapp', {
   clientId: '2okLZ2CApFhyDrM6KZyEzftptQtKatX429n',
-  network: 'rinkbey'
+  network: 'rinkeby'
 });
 
 uport.requestCredentials().then((credentials) => {
